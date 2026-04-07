@@ -1,25 +1,1075 @@
-<html>
-    <head>
-        <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-        <link rel="manifest" href="/images/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        <title>Bhumil Sarvaiya</title>
-    </head>
-    <body>
-        <embed src="/cv.pdf" width="100%" height="100%"/>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bhumil Sarvaiya — Senior Backend Engineer & MBA</title>
+<meta name="description" content="Senior Backend Engineer with 7+ years building scalable SaaS and distributed systems. Founding engineer at SuperTokens. MBA at UMD Smith."/>
+<meta property="og:title" content="Bhumil Sarvaiya — Senior Backend Engineer & MBA"/>
+<meta property="og:description" content="Founding engineer. TypeScript. Node.js. Distributed systems. UMD Smith MBA 2026."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --bg2: #0d1117;
+    --bg3: #111820;
+    --border: #1c2433;
+    --border2: #263040;
+    --text: #dde3ea;
+    --text2: #7a8799;
+    --text3: #4a5568;
+    --amber: #f59e0b;
+    --amber2: #fcd34d;
+    --amber-dim: rgba(245,158,11,0.12);
+    --amber-glow: rgba(245,158,11,0.06);
+    --teal: #2dd4bf;
+    --blue: #60a5fa;
+    --radius: 8px;
+    --radius-lg: 14px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE TEXTURE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+  section { padding: 96px 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 0;
+    transition: background .3s, border-color .3s;
+    border-bottom: 1px solid transparent;
+  }
+  nav.scrolled {
+    background: rgba(8,12,16,0.92);
+    border-color: var(--border);
+    backdrop-filter: blur(12px);
+  }
+  .nav-inner {
+    max-width: 900px; margin: 0 auto; padding: 0 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: relative; z-index: 1;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .nav-logo span { color: var(--amber); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text2);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.02em;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    font-size: 13px;
+    color: var(--amber);
+    border: 1px solid rgba(245,158,11,0.3);
+    border-radius: var(--radius);
+    padding: 7px 16px;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    transition: background .2s, border-color .2s;
+  }
+  .nav-cta:hover { background: var(--amber-dim); border-color: var(--amber); }
+  .nav-mobile-btn { display: none; cursor: pointer; background: none; border: none; color: var(--text2); font-size: 22px; }
+  .mobile-menu { display: none; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 96px;
+    position: relative;
+    overflow: hidden;
+    border-top: none;
+  }
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(245,158,11,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,158,11,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 70%);
+  }
+  .hero-glow {
+    position: absolute;
+    top: -100px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(245,158,11,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--amber);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--amber);
+    opacity: 0.6;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(42px, 7vw, 76px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  h1 .dim { color: var(--text3); }
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: var(--text2);
+    max-width: 560px;
+    margin: 24px 0 40px;
+    line-height: 1.65;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 500; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--amber);
+    color: #000;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 13px 26px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: opacity .2s, transform .15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+  .btn-secondary {
+    color: var(--text2);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    padding: 13px 26px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border2);
+    text-decoration: none;
+    transition: color .2s, border-color .2s, background .2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { color: var(--text); border-color: var(--border2); background: var(--bg3); }
+  .hero-metrics {
+    display: flex; gap: 40px; flex-wrap: wrap;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+  .metric-item { }
+  .metric-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--amber);
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .metric-label {
+    font-size: 12px;
+    color: var(--text3);
+    margin-top: 5px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ─── SECTION HEADERS ─── */
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-tag::before {
+    content: '';
+    display: inline-block; width: 18px; height: 1px;
+    background: var(--amber); opacity: 0.6;
+  }
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .section-desc {
+    font-size: 15px;
+    color: var(--text2);
+    max-width: 500px;
+    line-height: 1.65;
+    margin-bottom: 52px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+  .about-text p { color: var(--text2); font-size: 15px; line-height: 1.8; margin-bottom: 18px; }
+  .about-text p strong { color: var(--text); font-weight: 500; }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-links { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .about-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text2);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 7px 14px;
+    border-radius: var(--radius);
+    transition: color .2s, border-color .2s;
+  }
+  .about-link:hover { color: var(--amber); border-color: rgba(245,158,11,0.3); }
+  .about-cards { display: flex; flex-direction: column; gap: 14px; }
+  .about-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 22px;
+    transition: border-color .2s;
+  }
+  .about-card:hover { border-color: var(--border2); }
+  .about-card-icon { font-size: 20px; margin-bottom: 10px; }
+  .about-card-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 5px; }
+  .about-card-desc { font-size: 12px; color: var(--text2); line-height: 1.6; font-family: 'DM Mono', monospace; }
+
+  /* ─── EXPERIENCE ─── */
+  .exp-list { display: flex; flex-direction: column; gap: 2px; }
+  .exp-item {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color .2s;
+  }
+  .exp-item:hover { border-color: var(--border2); }
+  .exp-header {
+    padding: 24px 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    user-select: none;
+  }
+  .exp-left { flex: 1; }
+  .exp-role {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--text);
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .exp-company { font-size: 14px; color: var(--amber); font-family: 'DM Mono', monospace; }
+  .exp-right { text-align: right; flex-shrink: 0; }
+  .exp-date { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; }
+  .exp-loc { font-size: 12px; color: var(--text3); margin-top: 3px; font-family: 'DM Mono', monospace; }
+  .exp-chevron { color: var(--text3); font-size: 12px; margin-top: 2px; transition: transform .25s; }
+  .exp-chevron.open { transform: rotate(90deg); }
+  .exp-body { display: none; padding: 0 28px 24px; }
+  .exp-body.open { display: block; }
+  .exp-body ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .exp-body li {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.65;
+    padding-left: 18px;
+    position: relative;
+  }
+  .exp-body li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--amber);
+    font-size: 10px;
+    top: 5px;
+  }
+  .exp-body li strong { color: var(--text); font-weight: 500; }
+  .exp-badges { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+  .badge {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    padding: 4px 10px;
+    border-radius: 99px;
+    border: 1px solid var(--border2);
+    color: var(--text3);
+    background: var(--bg3);
+  }
+  .founding-badge {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    padding: 4px 10px;
+    border-radius: 99px;
+    border: 1px solid rgba(245,158,11,0.3);
+    color: var(--amber);
+    background: var(--amber-dim);
+  }
+
+  /* ─── SKILLS ─── */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .skill-group {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 22px;
+    transition: border-color .2s, background .2s;
+  }
+  .skill-group:hover { border-color: var(--border2); background: var(--bg3); }
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-tag {
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    color: var(--text2);
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    transition: color .2s, border-color .2s;
+  }
+  .skill-tag:hover { color: var(--text); border-color: var(--border2); }
+  .skill-tag.primary {
+    color: var(--amber);
+    border-color: rgba(245,158,11,0.25);
+    background: var(--amber-glow);
+  }
+
+  /* ─── PROJECTS ─── */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .project-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex; flex-direction: column;
+    transition: border-color .25s, transform .2s;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--amber);
+    opacity: 0;
+    transition: opacity .25s;
+  }
+  .project-card:hover { border-color: var(--border2); transform: translateY(-3px); }
+  .project-card:hover::before { opacity: 1; }
+  .project-card.featured { border-color: rgba(245,158,11,0.2); }
+  .project-card.featured::before { opacity: 0.5; }
+  .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; gap: 10px; }
+  .project-icon {
+    width: 40px; height: 40px;
+    background: var(--amber-dim);
+    border-radius: 10px;
+    border: 1px solid rgba(245,158,11,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .project-links { display: flex; gap: 8px; }
+  .project-link {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    color: var(--text3);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: color .2s, border-color .2s;
+  }
+  .project-link:hover { color: var(--amber); border-color: rgba(245,158,11,0.3); }
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+    text-decoration: none;
+  }
+  .project-role { font-size: 12px; color: var(--amber); font-family: 'DM Mono', monospace; margin-bottom: 12px; }
+  .project-desc { font-size: 14px; color: var(--text2); line-height: 1.65; flex: 1; margin-bottom: 18px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .project-tag {
+    font-size: 11px; font-family: 'DM Mono', monospace;
+    color: var(--text3); background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 5px;
+    padding: 3px 8px;
+  }
+  .project-stat {
+    font-size: 13px; font-family: 'DM Mono', monospace;
+    color: var(--amber); margin-top: 12px;
+    display: flex; align-items: center; gap: 5px;
+  }
+
+  /* ─── EDUCATION ─── */
+  .edu-list { display: flex; flex-direction: column; gap: 14px; }
+  .edu-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: border-color .2s;
+  }
+  .edu-card:hover { border-color: var(--border2); }
+  .edu-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--amber);
+    margin-top: 5px; flex-shrink: 0;
+    box-shadow: 0 0 12px rgba(245,158,11,0.4);
+  }
+  .edu-dot.secondary { background: var(--text3); box-shadow: none; }
+  .edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px; font-weight: 600;
+    color: var(--text); letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+  .edu-school { font-size: 14px; color: var(--amber); font-family: 'DM Mono', monospace; margin-bottom: 6px; }
+  .edu-meta { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; margin-bottom: 8px; }
+  .edu-note { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+  /* ─── CONTACT ─── */
+  #contact { padding-bottom: 120px; }
+  .contact-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card::before {
+    content: '';
+    position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(245,158,11,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .contact-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .contact-sub { font-size: 15px; color: var(--text2); max-width: 440px; margin: 0 auto 36px; line-height: 1.65; }
+  .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .contact-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    padding: 12px 22px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    text-decoration: none;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .contact-link:hover { color: var(--text); background: var(--bg3); border-color: var(--border2); }
+  .contact-link.primary { background: var(--amber); color: #000; border-color: var(--amber); font-weight: 500; }
+  .contact-link.primary:hover { opacity: .88; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+    position: relative; z-index: 1;
+  }
+  .footer-inner {
+    max-width: 900px; margin: 0 auto; padding: 0 28px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 14px;
+    color: var(--text2);
+  }
+  .footer-name span { color: var(--amber); }
+  .footer-note { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .45s ease, transform .45s ease; }
+  .stagger > *.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 720px) {
+    section { padding: 72px 0; }
+    .container { padding: 0 20px; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero-metrics { gap: 28px; }
+    .nav-links, .nav-cta { display: none; }
+    .nav-mobile-btn { display: block; }
+    .mobile-menu.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+      background: rgba(8,12,16,0.98); backdrop-filter: blur(16px);
+      z-index: 99; padding: 24px 28px;
+    }
+    .mobile-menu a {
+      font-family: 'DM Mono', monospace;
+      font-size: 15px; color: var(--text2);
+      text-decoration: none; padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      display: block;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .contact-card { padding: 36px 24px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .hero-metrics { flex-direction: column; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Bhumil<span> </span>Sarvaiya</a>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <a href="mailto:sarvaiyabhumil@gmail.com" class="nav-cta">get in touch</a>
+    <button class="nav-mobile-btn" id="mobileBtn" aria-label="Toggle menu">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">about</a>
+  <a href="#experience" onclick="closeMobile()">experience</a>
+  <a href="#skills" onclick="closeMobile()">skills</a>
+  <a href="#projects" onclick="closeMobile()">projects</a>
+  <a href="#contact" onclick="closeMobile()">contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Available for senior roles & co-founder conversations</div>
+      <h1>
+        Bhumil<br>
+        <span class="dim">Sarvaiya</span>
+      </h1>
+      <p class="hero-sub">
+        <strong>Senior Backend Engineer</strong> with 7+ years building distributed systems and SaaS products at scale.
+        Founding engineer at SuperTokens. Currently finishing an <strong>MBA at UMD Smith</strong> with a focus on Product Management.
+      </p>
+      <div class="hero-actions">
+        <a href="#experience" class="btn-primary">View my work</a>
+        <a href="#contact" class="btn-secondary">Get in touch</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <div class="metric-value"><span class="counter" data-target="15000">0</span></div>
+          <div class="metric-label">GitHub stars · SuperTokens</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value"><span class="counter" data-target="50" data-suffix="%">0</span></div>
+          <div class="metric-label">AWS cost reduction</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value"><span class="counter" data-target="95" data-suffix="%">0</span></div>
+          <div class="metric-label">Faster deploys (3 min → 8 sec)</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value"><span class="counter" data-target="7" data-suffix="+">0</span></div>
+          <div class="metric-label">Years of experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-tag">About</div>
+    <h2>Engineer with product instincts</h2>
+    <div class="about-grid fade-up">
+      <div class="about-text">
+        <p>
+          I'm a backend engineer who joined <strong>SuperTokens as a founding engineer</strong> in 2018, helping grow it from zero to a widely-adopted open-source auth platform with 15K+ GitHub stars. I owned distributed systems design, SDK development, and infrastructure optimization — reducing AWS costs by 50% and shrinking deploy cycles from 3 minutes to under 10 seconds.
+        </p>
+        <p>
+          In parallel, I built a freelance practice through Toptal, delivering <strong>TypeScript/Node.js cloud solutions</strong> for clients focused on latency, security, and 99% uptime.
+        </p>
+        <p>
+          I'm now completing an <strong>MBA at the University of Maryland Smith School of Business</strong>, specializing in Product Management and Marketing — bridging deep technical expertise with product strategy, user research, and go-to-market thinking.
+        </p>
+        <p>
+          I'm interested in senior engineering roles, product-facing technical leadership, and early-stage startup opportunities.
+        </p>
+        <div class="about-links">
+          <a href="https://linkedin.com/in/bhumilsarvaiya" target="_blank" class="about-link">LinkedIn ↗</a>
+          <a href="https://github.com/bhumilsarvaiya" target="_blank" class="about-link">GitHub ↗</a>
+          <a href="mailto:sarvaiyabhumil@gmail.com" class="about-link">Email ↗</a>
+        </div>
+      </div>
+      <div class="about-cards">
+        <div class="about-card">
+          <div class="about-card-icon">⚙️</div>
+          <div class="about-card-title">Distributed Systems</div>
+          <div class="about-card-desc">High-availability auth at scale. AWS infra, CI/CD, database optimization, observability.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">🧩</div>
+          <div class="about-card-title">Developer Experience</div>
+          <div class="about-card-desc">SDKs, APIs, and developer-facing tools. Translating pain points into product features.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">📐</div>
+          <div class="about-card-title">Product Thinking</div>
+          <div class="about-card-desc">User research, PRDs, journey mapping, Figma wireframing. MBA in Product Management.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">🤖</div>
+          <div class="about-card-title">AI & LLM Applications</div>
+          <div class="about-card-desc">Building with LLMs and AI agents. Exploring applied AI in developer tooling and SaaS.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-tag">Experience</div>
+    <h2>Where I've built</h2>
+    <p class="section-desc">7+ years across founding roles, freelance, and product-adjacent engineering.</p>
+    <div class="exp-list stagger">
+
+      <!-- SuperTokens -->
+      <div class="exp-item">
+        <div class="exp-header" onclick="toggleExp(this)">
+          <div class="exp-left">
+            <div class="exp-role">Lead Backend Developer</div>
+            <div class="exp-company">SuperTokens <span class="founding-badge" style="margin-left:8px">Founding Engineer</span></div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-date">Feb 2018 – Aug 2024</div>
+            <div class="exp-loc">Mumbai, India</div>
+          </div>
+          <span class="exp-chevron open">▶</span>
+        </div>
+        <div class="exp-body open">
+          <ul>
+            <li>Led design and scaling of distributed backend systems for authentication workflows, driving adoption to <strong>15K+ GitHub stars</strong></li>
+            <li>Re-architected distributed SaaS infrastructure, <strong>reducing AWS costs by 50%</strong> and cutting deployment time from 3 minutes to <strong>7–8 seconds</strong> without downtime</li>
+            <li>Designed developer-facing SDKs by mapping user journeys and identifying key usability gaps, significantly improving onboarding and developer experience</li>
+            <li>Implemented CI/CD pipelines with GitHub Actions and optimized database queries, <strong>increasing request throughput by 15%</strong></li>
+            <li>Translated user feedback and developer pain points into product improvements, collaborating with engineering and operations using Agile (Jira)</li>
+          </ul>
+          <div class="exp-badges">
+            <span class="founding-badge">Founding Engineer</span>
+            <span class="badge">TypeScript</span><span class="badge">Node.js</span><span class="badge">Distributed Systems</span>
+            <span class="badge">AWS</span><span class="badge">Docker</span><span class="badge">GitHub Actions</span><span class="badge">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legendary -->
+      <div class="exp-item">
+        <div class="exp-header" onclick="toggleExp(this)">
+          <div class="exp-left">
+            <div class="exp-role">Backend Developer</div>
+            <div class="exp-company">Legendary Software Labs LLC <span style="font-size:11px;color:var(--text3);margin-left:8px;font-family:'DM Mono',monospace">via Toptal</span></div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-date">Jan 2020 – Jun 2024</div>
+            <div class="exp-loc">Remote · Part-time</div>
+          </div>
+          <span class="exp-chevron">▶</span>
+        </div>
+        <div class="exp-body">
+          <ul>
+            <li>Architected a Node.js and TypeScript cloud solution addressing latency and security issues, <strong>improving system response time by 35%</strong></li>
+            <li>Ensured <strong>99% uptime</strong> by implementing observability practices — monitoring critical logs and events — and performing proactive maintenance</li>
+          </ul>
+          <div class="exp-badges">
+            <span class="badge">TypeScript</span><span class="badge">Node.js</span><span class="badge">Observability</span><span class="badge">Cloud Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Office Beacon -->
+      <div class="exp-item">
+        <div class="exp-header" onclick="toggleExp(this)">
+          <div class="exp-left">
+            <div class="exp-role">Software Developer</div>
+            <div class="exp-company">Office Beacon LLC</div>
+          </div>
+          <div class="exp-right">
+            <div class="exp-date">Mar 2017 – Feb 2018</div>
+            <div class="exp-loc">Vadodara, India</div>
+          </div>
+          <span class="exp-chevron">▶</span>
+        </div>
+        <div class="exp-body">
+          <ul>
+            <li>Designed and implemented a TypeScript scheduling mechanism with Node.js that queued and executed tasks defined by a JSON schema, improving task processing efficiency and system reliability</li>
+          </ul>
+          <div class="exp-badges">
+            <span class="badge">TypeScript</span><span class="badge">Node.js</span><span class="badge">JSON Schema</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-tag">Skills</div>
+    <h2>What I work with</h2>
+    <p class="section-desc">A full-stack skill set spanning backend engineering, cloud infrastructure, AI, and product design.</p>
+    <div class="skills-grid stagger">
+      <div class="skill-group">
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">TypeScript</span>
+          <span class="skill-tag primary">Node.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Databases</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">PostgreSQL</span>
+          <span class="skill-tag primary">Redis</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Cassandra</span>
+          <span class="skill-tag">Elasticsearch</span>
+          <span class="skill-tag">Neo4j</span>
+          <span class="skill-tag">RethinkDB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud & DevOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">AWS</span>
+          <span class="skill-tag primary">Docker</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">GCP</span>
+          <span class="skill-tag">CircleCI</span>
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">Nginx</span>
+          <span class="skill-tag">Shell Scripting</span>
+          <span class="skill-tag">DevOps</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Data & AI</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">LLMs</span>
+          <span class="skill-tag primary">AI Agents</span>
+          <span class="skill-tag">Data Analysis</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Business Simulation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">APIs & Integrations</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">REST APIs</span>
+          <span class="skill-tag primary">Microservices</span>
+          <span class="skill-tag">Stripe</span>
+          <span class="skill-tag">Twilio</span>
+          <span class="skill-tag">Sendgrid</span>
+          <span class="skill-tag">Adobe PDF APIs</span>
+          <span class="skill-tag">API Documentation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Product & Design</div>
+        <div class="skill-tags">
+          <span class="skill-tag primary">Product Strategy</span>
+          <span class="skill-tag">User Research</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">PRDs</span>
+          <span class="skill-tag">Wireframing</span>
+          <span class="skill-tag">Agile / Jira</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-tag">Projects</div>
+    <h2>Selected work</h2>
+    <p class="section-desc">Open-source infrastructure, product concepts, and consulting — spanning engineering and product.</p>
+    <div class="projects-grid stagger">
+
+      <div class="project-card featured">
+        <div class="project-header">
+          <div class="project-icon">🔐</div>
+          <div class="project-links">
+            <a href="https://github.com/supertokens" target="_blank" class="project-link">GitHub ↗</a>
+            <a href="https://supertokens.com" target="_blank" class="project-link">Website ↗</a>
+          </div>
+        </div>
+        <div class="project-name">SuperTokens</div>
+        <div class="project-role">Founding Engineer · Lead Backend Developer</div>
+        <div class="project-desc">
+          Open-source authentication and session management platform. Led backend architecture, SDK design, and infrastructure scaling from the ground up.
+        </div>
+        <div class="project-stat">★ 15,000+ GitHub stars</div>
+        <div class="project-tags">
+          <span class="project-tag">TypeScript</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">Distributed Systems</span>
+          <span class="project-tag">AWS</span>
+          <span class="project-tag">Open Source</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🍵</div>
+        </div>
+        <div class="project-name">Tata Tea USA</div>
+        <div class="project-role">Product Concept · UX Research</div>
+        <div class="project-desc">
+          Designed a user-centric product concept for the US market. Conducted consumer research and built a mood-based discovery experience, with journey mapping and feature definition across 5+ variants.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Product Strategy</span>
+          <span class="project-tag">User Research</span>
+          <span class="project-tag">Journey Mapping</span>
+          <span class="project-tag">Figma</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🏃</div>
+        </div>
+        <div class="project-name">Thrive</div>
+        <div class="project-role">Tech Consultant</div>
+        <div class="project-desc">
+          Served as Tech Consultant for Thrive, a digital platform helping US student-athletes identify burnout signs and prioritize self-care through behavioral tracking and nudges.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Tech Consulting</span>
+          <span class="project-tag">Platform Design</span>
+          <span class="project-tag">Student Wellness</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-tag">Education</div>
+    <h2>Academic background</h2>
+    <p class="section-desc">Computer Engineering foundations, now combined with business and product training.</p>
+    <div class="edu-list stagger">
+      <div class="edu-card">
+        <div class="edu-dot"></div>
+        <div>
+          <div class="edu-degree">Master of Business Administration</div>
+          <div class="edu-school">University of Maryland, Smith School of Business</div>
+          <div class="edu-meta">Aug 2024 – May 2026 · College Park, MD · Product Management & Marketing</div>
+          <div class="edu-note">Smith Fellow & Graduate Assistant — Department of Decisions, Operations & Information Technology</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-dot secondary"></div>
+        <div>
+          <div class="edu-degree">Bachelor of Engineering, Computer Engineering</div>
+          <div class="edu-school">Gujarat Technological University, SVIT</div>
+          <div class="edu-meta">Aug 2012 – May 2016 · Ahmedabad, India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card fade-up">
+      <div class="contact-heading">Let's build something</div>
+      <p class="contact-sub">
+        Open to senior backend roles, product-engineering leadership, and early-stage startup conversations. Based in College Park, MD — graduating May 2026.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:sarvaiyabhumil@gmail.com" class="contact-link primary">sarvaiyabhumil@gmail.com</a>
+        <a href="https://linkedin.com/in/bhumilsarvaiya" target="_blank" class="contact-link">LinkedIn ↗</a>
+        <a href="https://github.com/bhumilsarvaiya" target="_blank" class="contact-link">GitHub ↗</a>
+        <a href="tel:+12403028865" class="contact-link">+1 (240) 302-8865</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Bhumil<span> </span>Sarvaiya</div>
+    <div class="footer-note">Senior Backend Engineer · MBA · College Park, MD</div>
+  </div>
+</footer>
+
+<script>
+// NAV scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Mobile menu
+document.getElementById('mobileBtn').addEventListener('click', () => {
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  document.getElementById('mobileBtn').textContent = m.classList.contains('open') ? '✕' : '☰';
+});
+function closeMobile() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mobileBtn').textContent = '☰';
+}
+
+// Experience accordion
+function toggleExp(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.exp-chevron');
+  body.classList.toggle('open');
+  chevron.classList.toggle('open');
+}
+
+// Counter animation
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const isK = target >= 1000;
+  const display = isK ? target / 1000 : target;
+  const duration = 1400;
+  const start = performance.now();
+  function update(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const val = Math.round(eased * display);
+    el.textContent = (isK ? val + 'K' : val) + suffix;
+    if (t < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+// Intersection Observer for scroll animations + counters
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+
+    if (el.classList.contains('fade-up') || el.classList.contains('stagger')) {
+      el.classList.add('visible');
+      if (el.classList.contains('stagger')) {
+        [...el.children].forEach((child, i) => {
+          setTimeout(() => child.classList.add('visible'), i * 90);
+        });
+      }
+    }
+
+    if (el.classList.contains('counter-section')) {
+      el.querySelectorAll('.counter').forEach(c => animateCounter(c));
+    }
+
+    observer.unobserve(el);
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up, .stagger').forEach(el => observer.observe(el));
+
+// Counter trigger — observe hero metrics
+const heroMetrics = document.querySelector('.hero-metrics');
+if (heroMetrics) {
+  heroMetrics.classList.add('counter-section');
+  observer.observe(heroMetrics);
+}
+</script>
+</body>
 </html>
